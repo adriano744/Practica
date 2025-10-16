@@ -1,0 +1,24 @@
+<h2>FORMULARIO CRUD</h2>
+<input [(ngModel)]="nombre" placeholder="Ingrese su nombre" type="text">
+<input [(ngModel)]="correo" placeholder="Ingrese su correo" type="email">
+<input [(ngModel)]="dni" placeholder="Ingrese su dni" type="text">
+<button (click)="Registrar()">Registrar Cliente</button>
+<hr>
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>DNI</th>
+      <th>Eliminar</th>
+      <th>Modificar</th>
+    </tr>
+    <tr *ngFor="let item of items; let i = index">
+      <td>{{item.nombre}}</td>
+      <td>{{item.correo}}</td>
+      <td>{{item.dni}}</td>
+      <td><button (click)="Eliminar(i)">Eliminar</button></td>
+      <td><button (click)="Modificar(i)">Modificar</button></td>
+    </tr>
+  </thead>
+</table>
